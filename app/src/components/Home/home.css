@@ -1,0 +1,29 @@
+.home-container {
+  height: 100vh;
+  background: linear-gradient(135deg, #0e3edd, #17a8eb);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.welcome-card {
+  background-color: white;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  animation: fadeIn 1s ease-in-out;
+}
+
+
+.welcome-title {
+  font-size: 2.5rem;
+  color: #152ba8;
+  font-weight: bold;
+}
+
+
+.welcome-sub {
+  color: #6c757d;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
