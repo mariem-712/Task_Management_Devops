@@ -14,7 +14,7 @@ export default function AdminDashboard() {
 
     try {
 
-      const { data } = await axios.get("http://localhost:8081/api/admin/tasks", {
+      const { data } = await axios.get("/api/admin/tasks", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
         },
@@ -36,7 +36,7 @@ export default function AdminDashboard() {
 
     try {
 
-      const data  = await axios.delete(`http://localhost:8081/api/admin/deleteTask/${id}`, {
+      const data  = await axios.delete(`/api/admin/deleteTask/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
         },
@@ -68,7 +68,7 @@ export default function AdminDashboard() {
       try {
 
 
-        const { data } = await axios.get(`http://localhost:8081/api/admin/search/${taskStatus}`, {
+        const { data } = await axios.get(`/api/admin/search/${taskStatus}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
           },

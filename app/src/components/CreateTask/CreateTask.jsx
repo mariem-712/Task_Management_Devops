@@ -21,7 +21,7 @@ export default function CreateTask() {
     async function createTask(values) {
         setisloadind(true)
         try {
-            const data = await axios.post("http://localhost:8081/api/admin/createTask", values,
+            const data = await axios.post("/api/admin/createTask", values,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
@@ -84,7 +84,7 @@ export default function CreateTask() {
 
         try {
 
-            const { data } = await axios.get("http://localhost:8081/api/admin/users", {
+            const { data } = await axios.get("/api/admin/users", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
                 },

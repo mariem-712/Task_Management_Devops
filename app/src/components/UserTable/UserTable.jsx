@@ -15,7 +15,7 @@ export default function UserTable() {
 
     try {
 
-      const { data } = await axios.get("http://localhost:8081/api/admin/users", {
+      const { data } = await axios.get("/api/admin/users", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
         },

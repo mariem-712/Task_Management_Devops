@@ -15,7 +15,7 @@ export default function EmployeeDashboard() {
 
     try {
 
-      const { data } = await axios.get("http://localhost:8081/api/employee/dashboard", {
+      const { data } = await axios.get("/api/employee/dashboard", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
         },
@@ -35,7 +35,7 @@ export default function EmployeeDashboard() {
   async function updateStatus(id_task, status) {
     try {
 
-      const { data } = await axios.get(`http://localhost:8081/api/employee/updateTask/${id_task}/${status}`, {
+      const { data } = await axios.get(`/api/employee/updateTask/${id_task}/${status}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
         },

@@ -25,7 +25,7 @@ export default function Register() {
         setisLoding(true)
 
         try {
-            const data = await axios.post("http://localhost:8081/api/auth/signup", values)
+            const data = await axios.post("/api/auth/signup", values)
             console.log(data.data);
 
                 setregisterMesage("success")         

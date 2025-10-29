@@ -23,7 +23,7 @@ export default function EditTask() {
 
         try {
 
-            const { data } = await axios.get(`http://localhost:8081/api/admin/oneTask/${id}`, {
+            const { data } = await axios.get(`/api/admin/oneTask/${id}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
                 },
@@ -50,7 +50,7 @@ export default function EditTask() {
         
 
         try {
-            const data = await axios.put(`http://localhost:8080/api/admin/updateTask/${id}`, values,
+            const data = await axios.put(`/api/admin/updateTask/${id}`, values,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
@@ -121,7 +121,7 @@ export default function EditTask() {
 
         try {
 
-            const { data } = await axios.get("http://localhost:8080/api/admin/users", {
+            const { data } = await axios.get("/api/admin/users", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
                 },

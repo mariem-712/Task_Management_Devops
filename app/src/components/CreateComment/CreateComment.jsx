@@ -1,3 +1,5 @@
+
+
 import axios from 'axios';
 import { useFormik } from 'formik';
 import React, { useEffect, useState } from 'react'
@@ -12,10 +14,11 @@ export default function CreateComment() {
         comment: ""
     };
 
+
     async function getData() {
         try {
 
-            const { data } = await axios.get(`http://localhost:8081/api/admin/oneTask/${id}`, {
+            const { data } = await axios.get(`/api/employee/oneTask/${id}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
                 },
@@ -45,7 +48,7 @@ export default function CreateComment() {
         let content = values.comment;
 
         try {
-            const { data } = await axios.post(`http://localhost:8081/api/admin/createComment/${id}`,
+            const { data } = await axios.post(`/api/admin/createComment/${id}`,
                 null,
                 {
                     params: { content },
@@ -66,7 +69,7 @@ export default function CreateComment() {
 
     async function getAllComment() {
         try {
-            const { data } = await axios.get(`http://localhost:8081/api/admin/comments/${id}`,
+            const { data } = await axios.get(`/api/admin/comments/${id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`

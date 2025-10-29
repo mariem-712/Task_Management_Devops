@@ -27,7 +27,7 @@ export default function Login() {
         setisLoding(true)
 
         try {
-            const data = await axios.post("http://localhost:8081/api/auth/login", values)
+            const data = await axios.post("/api/auth/login", values)
             console.log(data);
 
          

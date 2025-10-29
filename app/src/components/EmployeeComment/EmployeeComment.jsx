@@ -21,7 +21,7 @@ export default function EmployeeComment() {
 
         try {
 
-            const { data } = await axios.get(`http://localhost:8081/api/admin/oneTask/${id}`, {
+            const { data } = await axios.get(`/api/admin/oneTask/${id}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
                 },
@@ -55,7 +55,7 @@ export default function EmployeeComment() {
         let content = values.comment;
 
         try {
-            const { data } = await axios.post(`http://localhost:8081/api/admin/createComment/${id}`,
+            const { data } = await axios.post(`/api/admin/createComment/${id}`,
                 null,
                 {
                     params: { content },
@@ -80,7 +80,7 @@ export default function EmployeeComment() {
     async function getAllComment() {
 
         try {
-            const { data } = await axios.get(`http://localhost:8081/api/admin/comments/${id}`,
+            const { data } = await axios.get(`/api/admin/comments/${id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('tokenJwt')}`
