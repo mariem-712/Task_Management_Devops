@@ -38,7 +38,7 @@ services:
   build:
    context: ./app
    dockerfile: Dockerfile
-  image: mariemsayed/react-frontend
+  image: mariemsayed/react-front
   container_name: frontend
   ports:
    - "3000:3000"

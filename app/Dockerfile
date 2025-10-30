@@ -1,17 +1,26 @@
-# Use Node.js image
-FROM node:20
+# ===============================
+# Stage 1: Install and build
+# ===============================
+FROM node:20 AS build
 
-# Set working directory
 WORKDIR /app
 
-# Copy dependency files first (for caching)
+# Copy dependency files for caching
 COPY package*.json ./
 
-# Install dependencies
 RUN npm ci
 
-# Copy the rest of the app
 COPY . .
 
-# Start the development server
+# ===============================
+# Stage 2: Run the React dev server
+# ===============================
+FROM node:20-alpine AS runner
+
+WORKDIR /app
+
+# Copy only what's needed from build stage
+COPY --from=build /app ./
+
+
 CMD ["npm", "start"]
